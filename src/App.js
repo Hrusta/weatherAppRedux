@@ -5,7 +5,7 @@ import {
 } from "./components/ThemeContext/ThemeContext";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
-import "./App.css"; // Import the CSS file
+import "./App.css";
 
 const AppContent = () => {
   const { theme } = useContext(ThemeContext);

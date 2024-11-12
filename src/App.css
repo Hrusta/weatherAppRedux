@@ -68,7 +68,7 @@ body.dark {
   overflow-y: auto;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #000; /* Ensure font color remains the same */
+  color: #000; 
 }
 
 .suggestions-list li {
