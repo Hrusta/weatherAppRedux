@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/complexWeatherApp/static/css/main.99722a81.css",
+    "main.js": "/complexWeatherApp/static/js/main.5377ad83.js",
+    "index.html": "/complexWeatherApp/index.html",
+    "main.99722a81.css.map": "/complexWeatherApp/static/css/main.99722a81.css.map",
+    "main.5377ad83.js.map": "/complexWeatherApp/static/js/main.5377ad83.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.99722a81.css",
+    "static/js/main.5377ad83.js"
+  ]
+}
