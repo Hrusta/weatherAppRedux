@@ -1,14 +1,17 @@
-import React, { useContext } from "react";
-import {
-  ThemeProvider,
-  ThemeContext,
-} from "./components/ThemeContext/ThemeContext";
+import React, { useEffect } from "react";
+import { Provider } from "react-redux";
+import { useSelector } from "react-redux";
+import store from "./store";
 import Header from "./components/Header/Header";
 import SearchBar from "./components/SearchBar/SearchBar";
 import "./App.css";
 
 const AppContent = () => {
-  const { theme } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme.value);
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return (
     <div className={`app ${theme}`}>
@@ -20,9 +23,9 @@ const AppContent = () => {
 
 function App() {
   return (
-    <ThemeProvider>
+    <Provider store={store}>
       <AppContent />
-    </ThemeProvider>
+    </Provider>
   );
 }
 

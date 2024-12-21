@@ -12,6 +12,7 @@ import React, {
 } from "react";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 import "./SearchBar.css";
+import { useSelector, useDispatch } from "react-redux";
 
 // Inicijalni state za vrijeme
 const initialState = {
@@ -39,7 +40,8 @@ const SearchBar = forwardRef((props, ref) => {
   const [suggestions, setSuggestions] = useState([]);
   const searchInputRef = useRef(null);
   const previousSearchQueryRef = useRef("");
-  const { theme } = useContext(ThemeContext);
+  //const { theme } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme.value);
   const [{ weatherData, isLoading, error }, dispatch] = useReducer(
     weatherReducer,
     initialState

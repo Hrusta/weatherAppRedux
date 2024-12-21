@@ -1,16 +1,21 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "../ThemeContext/ThemeContext";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTheme } from "../../features/themeSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 
 const Header = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const theme = useSelector((state) => state.theme.value);
+  const dispatch = useDispatch();
 
   return (
     <header className={`header ${theme}`}>
       <h1>Weather App</h1>
-      <button onClick={toggleTheme} className="theme-toggle-button">
+      <button
+        onClick={() => dispatch(toggleTheme())}
+        className="theme-toggle-button"
+      >
         <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} />
       </button>
     </header>
